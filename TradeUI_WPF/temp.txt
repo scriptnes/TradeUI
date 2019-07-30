@@ -1,0 +1,22 @@
+   //List<int> orderTicketList = new List<int>();
+            //orderTicketList = GetTickets(oType);
+
+            //int i = 0;
+            //int cnt = orderTicketList.Count;
+            //while (i < cnt)
+            //{
+            //    foreach (int ticket in orderTicketList)
+            //    {
+            //        RefreshRates();
+            //        bool sel = OrderSelect(ticket, SELECT_BY_TICKET);
+            //        if (sel)
+            //        {
+            //            bool ret = OrderDelete(ticket, clrYellow);
+            //            if (!ret)
+            //            {
+            //                Print("Error: ", GetLastError());
+            //            }
+            //        }
+            //    }
+            //    i++;
+            //}
