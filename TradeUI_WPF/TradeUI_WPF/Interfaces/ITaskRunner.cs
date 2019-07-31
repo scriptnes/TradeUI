@@ -7,6 +7,6 @@ namespace TradeUI_WPF
     {
         void Post(Action<IMqlApi> action);
         void Post(Action<IProsoftApi> action);
-        void PostDeletePending(int oType);
+        void Post(Action<IUpdateApi> action);
     }
 }

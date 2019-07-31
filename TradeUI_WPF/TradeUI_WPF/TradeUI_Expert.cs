@@ -7,13 +7,14 @@ using NQuotes;
 
 namespace TradeUI_WPF
 {
-    public class TradeUI_Expert : MqlApi, ITaskRunner, IProsoftApi
+    public class TradeUI_Expert : MqlApi, ITaskRunner, IProsoftApi, IUpdateApi
     {
         private Thread _uiThread;
         private TradeUIForm _form;
         private bool _isFormClosed;
-        private BlockingCollection<Action<IMqlApi>> _taskRunnerQueue;
+        private BlockingCollection<Action<IMqlApi>> _taskRunnerMqlQueue;
         private BlockingCollection<Action<IProsoftApi>> _taskRunnerProsoftQueue;
+        private BlockingCollection<Action<IUpdateApi>> _taskRunnerUpdateQueue;
 
         public void StartUI()
         {
@@ -26,8 +27,9 @@ namespace TradeUI_WPF
 
         public override int init()
         {
-            _taskRunnerQueue = new BlockingCollection<Action<IMqlApi>>();
+            _taskRunnerMqlQueue = new BlockingCollection<Action<IMqlApi>>();
             _taskRunnerProsoftQueue = new BlockingCollection<Action<IProsoftApi>>();
+            _taskRunnerUpdateQueue = new BlockingCollection<Action<IUpdateApi>>(); 
 
             // create and start a thread for UI 
             // this is needed to avoid blocking the terminal interaction with the MQL API
@@ -47,7 +49,7 @@ namespace TradeUI_WPF
             while (!IsStopped() && !_isFormClosed)
             {
                 // execute a task posted from the UI
-                if (_taskRunnerQueue.TryTake(out Action<IMqlApi> action1, TimeSpan.FromSeconds(1)))
+                if (_taskRunnerMqlQueue.TryTake(out Action<IMqlApi> action1, TimeSpan.FromSeconds(1)))
                 {
                     action1(this);
                 }
@@ -55,6 +57,11 @@ namespace TradeUI_WPF
                 if (_taskRunnerProsoftQueue.TryTake(out Action<IProsoftApi> action2, TimeSpan.FromSeconds(1)))
                 {
                     action2(this);
+                }
+
+                if (_taskRunnerUpdateQueue.TryTake(out Action<IUpdateApi> update, TimeSpan.FromSeconds(1)))
+                {
+                    update(this);
                 }
 
             }
@@ -84,7 +91,7 @@ namespace TradeUI_WPF
         void ITaskRunner.Post(Action<IMqlApi> action)
         {
             // add the task to the queue for later execution from the EA thread in start()
-            _taskRunnerQueue.Add(action);
+            _taskRunnerMqlQueue.Add(action);
         }
 
         void ITaskRunner.Post(Action<IProsoftApi> action)
@@ -93,7 +100,14 @@ namespace TradeUI_WPF
             _taskRunnerProsoftQueue.Add(action);
         }
 
-        string IProsoftApi.GetCountOrder(int oType)
+        void ITaskRunner.Post(Action<IUpdateApi> action)
+        {
+            // add the task to the queue for later execution from the EA thread in start()
+            _taskRunnerUpdateQueue.Add(action);
+        }
+
+
+        string IUpdateApi.GetCountOrder(int oType)
         {
             int countOrders = 0;
             int ordersTotal = OrdersTotal();
@@ -113,7 +127,8 @@ namespace TradeUI_WPF
             return countOrders.ToString();
         }
 
-        void ITaskRunner.PostDeletePending(int oType)
+       
+        void IProsoftApi.DeletePending(int oType)
         {
             for (int i = OrdersTotal() - 1; i >= 0; i--)
             {
@@ -127,6 +142,7 @@ namespace TradeUI_WPF
                 }
             }
         }
-      
+
+       
     }
 }

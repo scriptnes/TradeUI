@@ -1,0 +1,12 @@
+D:\ProsoftDLL_Projects\ProsoftUserControlDLL\WFPFormProjects\TradeUI_WFP\TradeUI_WPF\DebugHost\bin\Debug\DebugHost.exe.config
+D:\ProsoftDLL_Projects\ProsoftUserControlDLL\WFPFormProjects\TradeUI_WFP\TradeUI_WPF\DebugHost\bin\Debug\DebugHost.exe
+D:\ProsoftDLL_Projects\ProsoftUserControlDLL\WFPFormProjects\TradeUI_WFP\TradeUI_WPF\DebugHost\bin\Debug\DebugHost.pdb
+D:\ProsoftDLL_Projects\ProsoftUserControlDLL\WFPFormProjects\TradeUI_WFP\TradeUI_WPF\DebugHost\bin\Debug\nquotes.dll
+D:\ProsoftDLL_Projects\ProsoftUserControlDLL\WFPFormProjects\TradeUI_WFP\TradeUI_WPF\DebugHost\bin\Debug\TradeUI_WPF.dll
+D:\ProsoftDLL_Projects\ProsoftUserControlDLL\WFPFormProjects\TradeUI_WFP\TradeUI_WPF\DebugHost\bin\Debug\TradeUI_WPF.pdb
+D:\ProsoftDLL_Projects\ProsoftUserControlDLL\WFPFormProjects\TradeUI_WFP\TradeUI_WPF\DebugHost\bin\Debug\nquotes.xml
+D:\ProsoftDLL_Projects\ProsoftUserControlDLL\WFPFormProjects\TradeUI_WFP\TradeUI_WPF\DebugHost\obj\Debug\DebugHost.csprojAssemblyReference.cache
+D:\ProsoftDLL_Projects\ProsoftUserControlDLL\WFPFormProjects\TradeUI_WFP\TradeUI_WPF\DebugHost\obj\Debug\DebugHost.csproj.CoreCompileInputs.cache
+D:\ProsoftDLL_Projects\ProsoftUserControlDLL\WFPFormProjects\TradeUI_WFP\TradeUI_WPF\DebugHost\obj\Debug\DebugHost.csproj.CopyComplete
+D:\ProsoftDLL_Projects\ProsoftUserControlDLL\WFPFormProjects\TradeUI_WFP\TradeUI_WPF\DebugHost\obj\Debug\DebugHost.exe
+D:\ProsoftDLL_Projects\ProsoftUserControlDLL\WFPFormProjects\TradeUI_WFP\TradeUI_WPF\DebugHost\obj\Debug\DebugHost.pdb

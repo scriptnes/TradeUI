@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Interfaces\ITaskRunner.cs" />
     <Compile Include="Interfaces\IProsoftApi.cs" />
+    <Compile Include="Interfaces\IUpdateApi.cs" />
     <Compile Include="TradeUIForm.xaml.cs">
       <DependentUpon>TradeUIForm.xaml</DependentUpon>
     </Compile>

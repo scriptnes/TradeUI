@@ -31,22 +31,18 @@ namespace TradeUI_WPF
 
         private void statusTimer_Tick(object sender, EventArgs e)
         {
-            _taskRunner.Post((IProsoftApi api) =>
+            _taskRunner.Post((IUpdateApi api) =>
             {
                 // call Prosoft API function
-                string getBuyStop = api.GetCountOrder(OP_BUYSTOP);
-                string getBuyLimit =  api.GetCountOrder(OP_BUYLIMIT);
-                string getSellStop = api.GetCountOrder(OP_SELLSTOP);
-                string getSellLimit = api.GetCountOrder(OP_SELLLIMIT);
 
                 // perform a UI update
                 // use InvokeAsync(), because all UI calls must happen on the UI thread
                 Dispatcher.InvokeAsync(new Action(() =>
                 {
-                    buyStopLabel_value.Content = getBuyStop;
-                    buyLimitLabel_value.Content = getBuyLimit;
-                    sellStopLabel_value.Content = getSellStop;
-                    sellLimitLabel_value.Content = getSellLimit;
+                    buyStopLabel_value.Content = api.GetCountOrder(OP_BUYSTOP);
+                    buyLimitLabel_value.Content = api.GetCountOrder(OP_BUYLIMIT);
+                    sellStopLabel_value.Content = api.GetCountOrder(OP_SELLSTOP);
+                    sellLimitLabel_value.Content = api.GetCountOrder(OP_SELLLIMIT);
                 }));
             });
         }
@@ -60,26 +56,34 @@ namespace TradeUI_WPF
         private void DeletePendingButton_Click(object sender, RoutedEventArgs e)
         {
 
-            Dispatcher.InvokeAsync(new Action(() =>
+            _taskRunner.Post((IProsoftApi api) =>
             {
-                if (buyStopRadioButton.IsChecked == true)
-                {
-                    _taskRunner.PostDeletePending(OP_BUYSTOP);
-                }
-                if (buyLimitRadioButton.IsChecked == true)
-                {
-                    _taskRunner.PostDeletePending(OP_BUYLIMIT);
-                }
-                if (sellStopRadioButton.IsChecked == true)
-                {
-                    _taskRunner.PostDeletePending(OP_SELLSTOP);
-                }
-                if (sellLimitRadioButton.IsChecked == true)
-                {
-                    _taskRunner.PostDeletePending(OP_SELLLIMIT);
-                }
+                // call Prosoft API function
 
-            }));
+                // perform a UI update
+                // use InvokeAsync(), because all UI calls must happen on the UI thread
+                Dispatcher.InvokeAsync(new Action(() =>
+                {
+                    if (buyStopRadioButton.IsChecked == true)
+                    {
+                        api.DeletePending(OP_BUYSTOP);
+                    }
+                    if (buyLimitRadioButton.IsChecked == true)
+                    {
+                        api.DeletePending(OP_BUYLIMIT);
+                    }
+                    if (sellStopRadioButton.IsChecked == true)
+                    {
+                        api.DeletePending(OP_SELLSTOP);
+                    }
+                    if (sellLimitRadioButton.IsChecked == true)
+                    {
+                        api.DeletePending(OP_SELLLIMIT);
+                    }
+
+                    
+                }));
+            });
            
         }
     }

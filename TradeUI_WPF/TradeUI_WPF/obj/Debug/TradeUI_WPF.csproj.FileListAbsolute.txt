@@ -1,0 +1,13 @@
+D:\ProsoftDLL_Projects\ProsoftUserControlDLL\WFPFormProjects\TradeUI_WFP\TradeUI_WPF\TradeUI_WPF\bin\Debug\TradeUI_WPF.dll
+D:\ProsoftDLL_Projects\ProsoftUserControlDLL\WFPFormProjects\TradeUI_WFP\TradeUI_WPF\TradeUI_WPF\bin\Debug\TradeUI_WPF.pdb
+D:\ProsoftDLL_Projects\ProsoftUserControlDLL\WFPFormProjects\TradeUI_WFP\TradeUI_WPF\TradeUI_WPF\bin\Debug\nquotes.dll
+D:\ProsoftDLL_Projects\ProsoftUserControlDLL\WFPFormProjects\TradeUI_WFP\TradeUI_WPF\TradeUI_WPF\bin\Debug\nquotes.xml
+D:\ProsoftDLL_Projects\ProsoftUserControlDLL\WFPFormProjects\TradeUI_WFP\TradeUI_WPF\TradeUI_WPF\obj\Debug\TradeUI_WPF.csprojAssemblyReference.cache
+D:\ProsoftDLL_Projects\ProsoftUserControlDLL\WFPFormProjects\TradeUI_WFP\TradeUI_WPF\TradeUI_WPF\obj\Debug\TradeUIForm.baml
+D:\ProsoftDLL_Projects\ProsoftUserControlDLL\WFPFormProjects\TradeUI_WFP\TradeUI_WPF\TradeUI_WPF\obj\Debug\TradeUIForm.g.cs
+D:\ProsoftDLL_Projects\ProsoftUserControlDLL\WFPFormProjects\TradeUI_WFP\TradeUI_WPF\TradeUI_WPF\obj\Debug\TradeUI_WPF_MarkupCompile.cache
+D:\ProsoftDLL_Projects\ProsoftUserControlDLL\WFPFormProjects\TradeUI_WFP\TradeUI_WPF\TradeUI_WPF\obj\Debug\TradeUI_WPF.g.resources
+D:\ProsoftDLL_Projects\ProsoftUserControlDLL\WFPFormProjects\TradeUI_WFP\TradeUI_WPF\TradeUI_WPF\obj\Debug\TradeUI_WPF.csproj.CoreCompileInputs.cache
+D:\ProsoftDLL_Projects\ProsoftUserControlDLL\WFPFormProjects\TradeUI_WFP\TradeUI_WPF\TradeUI_WPF\obj\Debug\TradeUI_WPF.csproj.CopyComplete
+D:\ProsoftDLL_Projects\ProsoftUserControlDLL\WFPFormProjects\TradeUI_WFP\TradeUI_WPF\TradeUI_WPF\obj\Debug\TradeUI_WPF.dll
+D:\ProsoftDLL_Projects\ProsoftUserControlDLL\WFPFormProjects\TradeUI_WFP\TradeUI_WPF\TradeUI_WPF\obj\Debug\TradeUI_WPF.pdb

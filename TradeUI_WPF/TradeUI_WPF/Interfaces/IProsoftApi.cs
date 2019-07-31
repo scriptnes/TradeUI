@@ -4,6 +4,6 @@ namespace TradeUI_WPF
 {
     public interface IProsoftApi
     {
-        string GetCountOrder(int oType);
+        void DeletePending(int oType);
     }
 }
